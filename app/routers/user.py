@@ -21,7 +21,6 @@ def create_user(email_password: UserEmailPassword,db: Session = Depends(get_db))
     email_password.password = hashed_password
   
     new_user = models.User(**email_password.dict())
-    print(new_user)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
