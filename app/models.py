@@ -15,7 +15,7 @@ class Post(Base):
   content = Column(String, nullable = False)
   published = Column(Boolean, server_default = 'TRUE',nullable = False) 
   create_at = Column(TIMESTAMP(timezone=True), nullable = False, server_default = text('now()'))
-  owner_id = Column(Integer, ForeignKey(
+  user_id = Column(Integer, ForeignKey(
       'user.id', ondelete="CASCADE"), nullable=False)
   
   #  owner = relationship('class User')
