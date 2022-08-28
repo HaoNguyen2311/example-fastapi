@@ -39,9 +39,9 @@ app.add_middleware(
 #         print("connecting to database fail")
 #         print("ERROR:", error)
 #         time.sleep(2)
-app.get('/')
 
 
+@app.get('/')
 def root():
   return {'message': 'done'}
         
