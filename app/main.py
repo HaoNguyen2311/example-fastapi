@@ -39,6 +39,11 @@ app.add_middleware(
 #         print("connecting to database fail")
 #         print("ERROR:", error)
 #         time.sleep(2)
+app.get('/')
+
+
+def root():
+  return {'message': 'done'}
         
         
 app.include_router(post.router)
